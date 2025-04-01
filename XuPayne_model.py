@@ -12,9 +12,23 @@ from bokeh.layouts import column, row
 from io import StringIO
 from DEM_Berryman import DEM
 import Gassmann
-pip install streamlit-bokeh3
 from bokeh.plotting import figure
-from streamlit_bokeh3 import st_bokeh
+from streamlit_bokeh_events import streamlit_bokeh_events
+
+# Create plot
+p = figure(title="Simple Plot")
+p.circle([1,2,3], [4,5,6])
+
+# Display with events
+event_result = streamlit_bokeh_events(
+    p,
+    events="CLICK",
+    key="bokeh_plot",
+    refresh_on_update=False
+)
+
+if event_result:
+    st.write("Click position:", event_result)
 
 # Clone repo
 repo_url = "https://github.com/Chepe1980/XuPayne_Model.git"

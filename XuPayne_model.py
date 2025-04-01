@@ -1,5 +1,4 @@
-
-import requests
+import os
 import sys
 import streamlit as st
 import numpy as np
@@ -16,23 +15,20 @@ import Gassmann
 from bokeh.plotting import figure
 from streamlit_bokeh import streamlit_bokeh
 
-# Define a function to import from GitHub URL
-def import_from_github(https://raw.githubusercontent.com/Chepe1980/XuPayne_Model/refs/heads/main/XuPayne_model.py, XuPayne_model):
-    response = requests.get(https://raw.githubusercontent.com/Chepe1980/XuPayne_Model/refs/heads/main/XuPayne_model.py)
-    response.raise_for_status()
-    module_spec = importlib.util.spec_from_loader(XuPayne_model, loader=None)
-    module = importlib.util.module_from_spec(module_spec)
-    exec(response.text, module.__dict__)
-    sys.modules[XuPayne_model] = module
-    return module
+# Clone repo
+repo_url = "https://github.com/Chepe1980/XuPayne_Model.git"
+os.system(f"git clone {repo_url} temp_repo")
 
-# Example usage (replace with your actual GitHub raw URL)
-github_url = "https://github.com/Chepe1980/XuPayne_Model/edit/main/XuPayne_model.py"
-github_module = import_from_github(https://raw.githubusercontent.com/Chepe1980/XuPayne_Model/refs/heads/main/XuPayne_model.py, "remote_functions")
+# Import module
+spec = util.spec_from_file_location("XuPayne_model", "temp_repo/XuPayne_model.py")
+xu_payne_module = util.module_from_spec(spec)
+spec.loader.exec_module(xu_payne_module)
 
-# Now call your functions
-result1 = github_module.DEM_Berryman.py
-result2 = github_module.Gassmann.py
+# Use functions
+result = xu_payne_module.predict(input_data)
+
+# Cleanup
+os.system("rm -rf temp_repo")
 
 
 # Page configuration

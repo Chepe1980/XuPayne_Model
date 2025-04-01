@@ -13,8 +13,7 @@ from io import StringIO
 from DEM_Berryman import DEM
 import Gassmann
 from bokeh.plotting import figure
-from streamlit_bokeh import streamlit_bokeh
-
+from streamlit_bokeh_events import streamlit_bokeh_events
 # Clone repo
 repo_url = "https://github.com/Chepe1980/XuPayne_Model.git"
 os.system(f"git clone {repo_url} temp_repo")

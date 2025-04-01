@@ -17,8 +17,8 @@ from bokeh.plotting import figure
 from streamlit_bokeh import streamlit_bokeh
 
 # Define a function to import from GitHub URL
-def import_from_github(https://github.com/Chepe1980/XuPayne_Model/edit/main/XuPayne_model.py, XuPayne_model):
-    response = requests.get(https://github.com/Chepe1980/XuPayne_Model/edit/main/XuPayne_model.py)
+def import_from_github(https://raw.githubusercontent.com/Chepe1980/XuPayne_Model/refs/heads/main/XuPayne_model.py, XuPayne_model):
+    response = requests.get(https://raw.githubusercontent.com/Chepe1980/XuPayne_Model/refs/heads/main/XuPayne_model.py)
     response.raise_for_status()
     module_spec = importlib.util.spec_from_loader(XuPayne_model, loader=None)
     module = importlib.util.module_from_spec(module_spec)
@@ -28,7 +28,7 @@ def import_from_github(https://github.com/Chepe1980/XuPayne_Model/edit/main/XuPa
 
 # Example usage (replace with your actual GitHub raw URL)
 github_url = "https://github.com/Chepe1980/XuPayne_Model/edit/main/XuPayne_model.py"
-github_module = import_from_github(https://github.com/Chepe1980/XuPayne_Model/edit/main/XuPayne_model.py, "remote_functions")
+github_module = import_from_github(https://raw.githubusercontent.com/Chepe1980/XuPayne_Model/refs/heads/main/XuPayne_model.py, "remote_functions")
 
 # Now call your functions
 result1 = github_module.DEM_Berryman.py

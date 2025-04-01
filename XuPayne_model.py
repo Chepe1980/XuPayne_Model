@@ -168,7 +168,14 @@ def DEM(Km, Gm, Ki, Gi, alphai, phii, phi0=0.0, r=1000, phitol=1.0E-10, gamma=0.
 
     return K, G, phi
 
+def Ks(Kd, Km, Kf, phi):
+    gamma = 1.0 - phi - Kd/Km
+    return Kd + (gamma + phi)**2/(gamma/Km + phi/Kf)
 
+
+def Kd(Ks, Km, Kf, phi):
+    gamma = phi*(Km/Kf - 1.0)
+    return (Ks*(gamma + 1.0) - Km)/(gamma - 1.0 + Ks/Km)
 
 
         

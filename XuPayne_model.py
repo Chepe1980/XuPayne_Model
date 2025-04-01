@@ -12,8 +12,10 @@ from bokeh.layouts import column, row
 from io import StringIO
 from DEM_Berryman import DEM
 import Gassmann
+pip install streamlit-bokeh3
 from bokeh.plotting import figure
-from streamlit_bokeh_events import streamlit_bokeh_events
+from streamlit_bokeh3 import st_bokeh
+
 # Clone repo
 repo_url = "https://github.com/Chepe1980/XuPayne_Model.git"
 os.system(f"git clone {repo_url} temp_repo")

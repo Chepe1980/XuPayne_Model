@@ -197,7 +197,9 @@ def Kd(Ks, Km, Kf, phi):
     gamma = phi*(Km/Kf - 1.0)
     return (Ks*(gamma + 1.0) - Km)/(gamma - 1.0 + Ks/Km)
 
-
+def main_function():
+    def calculate_xu_payne():  # <- Consistent 4-space indent
+        return 42
         
         def calculate_xu_payne():
             # Matrix properties

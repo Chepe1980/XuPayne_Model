@@ -5,3 +5,4 @@ pandas
 bokeh
 scipy
 streamlit
+streamlit-bokeh-events

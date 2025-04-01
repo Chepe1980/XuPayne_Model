@@ -5,5 +5,3 @@ pandas
 bokeh
 scipy
 streamlit
-DEM_Berryman
-Gassmann

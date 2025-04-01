@@ -10,6 +10,11 @@ from bokeh.layouts import column, row
 from io import StringIO
 from DEM_Berryman import DEM
 import Gassmann
+from bokeh.plotting import figure
+from streamlit_bokeh import streamlit_bokeh
+
+
+
 
 # Page configuration
 st.set_page_config(layout="wide", page_title="Xu-Payne Rock Physics Analyzer")

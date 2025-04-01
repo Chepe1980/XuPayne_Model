@@ -67,9 +67,9 @@ if uploaded_file is not None:
         
         # Xu-Payne model calculation
 
-"""
-From Berryman 1980
-"""
+
+#From Berryman 1980
+
 
 import numpy as np
 from scipy.optimize import fsolve

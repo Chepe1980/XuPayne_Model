@@ -1,4 +1,7 @@
 numpy
 matplotlib
 lasio
+pandas
 bokeh
+scipy
+streamlit
